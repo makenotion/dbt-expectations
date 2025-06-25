@@ -3,14 +3,16 @@
                                                 column_list,
                                                 sum_total,
                                                 group_by=None,
-                                                row_condition=None
+                                                row_condition=None,
+                                                threshold=0
                                                 ) %}
 
 {% set expression %}
+abs(
 {% for column in column_list %}
 sum({{ column }}){% if not loop.last %} + {% endif %}
 {# the if just allows for column names or literal numbers #}
-{% endfor %} = {% if sum_total is number %}{{sum_total}}{% else %}sum({{ sum_total }}){% endif %}
+{% endfor %} - {% if sum_total is number %}{{sum_total}}{% else %}sum({{ sum_total }}){% endif %}) <= {{ threshold }}
 {% endset %}
 
 {{ dbt_expectations.expression_is_true(model,
