@@ -3,7 +3,9 @@
                                                                 column_name,
                                                                 compare_column_name,
                                                                 row_condition=None,
-                                                                compare_row_condition=None
+                                                                compare_row_condition=None,
+                                                                tolerance=0,
+                                                                tolerance_percent=None
                                                                 ) %}
 {%- set expression -%}
 count(distinct {{ column_name }})
@@ -21,6 +23,8 @@ count(distinct {{ compare_column_name }})
     compare_model=compare_model,
     compare_expression=compare_expression,
     row_condition=row_condition,
-    compare_row_condition=compare_row_condition
+    compare_row_condition=compare_row_condition,
+    tolerance=tolerance,
+    tolerance_percent=tolerance_percent
 ) }}
 {%- endtest -%}

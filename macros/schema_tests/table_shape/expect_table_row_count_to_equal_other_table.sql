@@ -4,7 +4,9 @@
                                             compare_group_by=None,
                                             factor=1,
                                             row_condition=None,
-                                            compare_row_condition=None
+                                            compare_row_condition=None,
+                                            tolerance=0,
+                                            tolerance_percent=None
                                         ) -%}
 
     {{ adapter.dispatch('test_expect_table_row_count_to_equal_other_table',
@@ -14,7 +16,9 @@
                                                 compare_group_by,
                                                 factor,
                                                 row_condition,
-                                                compare_row_condition
+                                                compare_row_condition,
+                                                tolerance,
+                                                tolerance_percent
                                             ) }}
 {% endtest %}
 
@@ -24,7 +28,9 @@
                                                     compare_group_by,
                                                     factor,
                                                     row_condition,
-                                                    compare_row_condition
+                                                    compare_row_condition,
+                                                    tolerance,
+                                                    tolerance_percent
                                                     ) -%}
 {{ dbt_expectations.test_equal_expression(model, "count(*)",
     compare_model=compare_model,
@@ -32,6 +38,8 @@
     group_by=group_by,
     compare_group_by=compare_group_by,
     row_condition=row_condition,
-    compare_row_condition=compare_row_condition
+    compare_row_condition=compare_row_condition,
+    tolerance=tolerance,
+    tolerance_percent=tolerance_percent
 ) }}
 {%- endmacro -%}

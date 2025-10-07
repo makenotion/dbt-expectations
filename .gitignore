@@ -3,5 +3,7 @@ target/
 dbt_packages/
 logs/
 .python-version
+package-lock.yml
 integration_tests/.spark-warehouse
 integration_tests/.hive-metastore
+integration_tests/package-lock.yml
