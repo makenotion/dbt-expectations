@@ -1,17 +1,6 @@
-## Issue this PR Addresses/Closes
+## Notion Task URLs
+Either add a link to a Notion task here, or delete this section and add the task ID to the PR title (e.g. `[TASK-00001] PR Title`).
 
-Closes #(Issue Number) 
+## Description
 
-If you don't have an issue #, please first open an issue on the repo before submitting a PR to discuss the changes you'd like to make.
-  
-## Summary of Changes
-
-(Succinct summary of the changes introduced by this PR)
-
-## Why Do We Need These Changes
-    
-(Short description why this PR is necessary)
-
-  
-## Reviewers
-@clausherther
+## How was this change tested?
