@@ -241,6 +241,8 @@ tests:
       compare_row_condition: some_flag=false
 ```
 
+If `compare_model` or `compare_column_name` are no specified, `model` and `column_name` are substituted. So, one could compare aggregations of two different columns in the same model, or identically named columns in separate models etc.
+
 **Note**: You can also express a **tolerance** factor, either as an absolute tolerable difference, `tolerance`, or as a tolerable % difference `tolerance_percent` expressed as a decimal (i.e 0.05 for 5%).
 
 ### [expect_table_column_count_to_be_between](macros/schema_tests/table_shape/expect_table_column_count_to_be_between.sql)
@@ -379,6 +381,8 @@ models: # or seeds:
           row_condition: "id is not null" # (Optional)
           compare_row_condition: "id is not null" # (Optional)
 ```
+
+**Note**: You can also express a **tolerance** factor, either as an absolute tolerable difference, `tolerance`, or as a tolerable % difference `tolerance_percent` expressed as a decimal (i.e 0.05 for 5%).
 
 ### [expect_table_row_count_to_equal_other_table_times_factor](macros/schema_tests/table_shape/expect_table_row_count_to_equal_other_table_times_factor.sql)
 
@@ -857,6 +861,8 @@ models: # or seeds:
 ```
 
 If `compare_model` or `compare_column_name` are no specified, `model` and `column_name` are substituted. So, one could compare distinct counts of two different columns in the same model, or identically named columns in separate models etc.
+
+**Note**: You can also express a **tolerance** factor, either as an absolute tolerable difference, `tolerance`, or as a tolerable % difference `tolerance_percent` expressed as a decimal (i.e 0.05 for 5%).
 
 ### [expect_column_mean_to_be_between](macros/schema_tests/aggregate_functions/expect_column_mean_to_be_between.sql)
 
